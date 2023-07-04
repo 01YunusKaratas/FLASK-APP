@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+
+        {% block başlık %}
+            DASHBOARD
+        {% endblock %}
+
+
+
+
+
+{% block body %}
+    <br>
+    <h3><i><b>Control Panel</b></i></h3>
+    <small>   <i><b>WELCOME --,{{ session["userName"] }} -- </b></i> </small>
+    <hr>
+
+    <br> <br>
+
+    <a href="/addarticle" class="btn btn-danger">  Add Article</a>
+
+
+    {% if articles %}
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">ID</th>
+              <th scope="col">AUTHOR</th>
+              <th scope="col">DATE</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for article in articles %}
+              <tr>
+              <th scope="row">{{ article.ID }}</th>
+              <td><a href="/article/{{ article.ID }}">{{ article.TITLE }}</a> </td>
+              <td>{{ article.AUTHOR }}</td>
+              <td>{{ article.CREATED_DATE }}</td>
+              <td><a href="/edit/{{ article.ID }}"  class="btn btn-danger" style="background:dodgerblue"> UPDATE </a></td>
+              <td><a href="/delete/{{ article.ID }}"  class="btn btn-danger">DELETE</a></td>
+              <!--  bu üst tarafta iki tane dinamik url kullandık .Direk ıd ile işlem yapacağız manasına geliyor-->
+
+
+              </tr>
+
+          {% endfor %}
+
+
+
+
+
+
+
+          </tbody>
+        </table>
+
+    {% else %}
+
+        <br> <br>
+        <div class="alert alert-warning">
+        There is no article yet
+
+
+        </div>
+
+    {% endif %}
+
+{% endblock body %}

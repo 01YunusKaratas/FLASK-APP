@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block başlık %}
+    {% if article %}
+        {{ article.ID }}
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+    {% if article %}
+        <br> <br>
+        <h3><b>{{ article.TITLE }}</b></h3>
+        <hr>
+        AUTHOR : <i><b>{{ article.AUTHOR }}</b></i>
+        <hr>
+        DATE   : <i><b>{{ article.CREATED_DATE }}</b></i>
+        <hr>
+        CONTENT :{{ article.CONTENT |safe }}  <!-- BURADA DÜZ ÇİZGİ SAFE YAZMA NEDENİMİZ HTML DÖKUMANINI NORMAL BİR ŞEKİLDE GÖSTERİYOR. -->
+    {% else %}
+        <br>
+        <div class="alert alert-danger">
+           No article found for this ID.
+        </div>
+    {% endif %}
+{% endblock %}

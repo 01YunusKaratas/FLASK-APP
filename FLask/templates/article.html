@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block tıtle %}
+    ARTICLE
+
+{% endblock %}
+
+{% block body  %}
+    <br>
+    <H3><i><b>ARTICLE</b></i></H3>
+    <hr>
+
+    <!--form etiketi,kullanıcıdan bilgi almak ve onu sunucuya göndermeyi sağlar -->
+    <form action="/search" method="post">
+        <input type="text" name="keyword" maxlength="64" placeholder="Search">
+        <button type="submit" class="btn btn-primary " style="background: red">Search</button>
+
+    </form>
+    <hr>
+
+
+    {% if articles %}
+        <ul class="list-group">
+            {% for article in articles %}
+                <li class="list-group-item" ><a href="/article/{{ article.ID }}">{{ article.TITLE }}</a> </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+
+        <div class="alert alert-danger">
+        Thıs block hasn't got artıcle
+    
+    
+        </div>
+
+    {% endif %}
+
+
+{% endblock body %}

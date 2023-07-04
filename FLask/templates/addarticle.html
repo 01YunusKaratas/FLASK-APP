@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+ {% block başlık %}
+
+         ADD-ARTICLE
+
+        {% endblock %}
+
+
+{% block body  %}
+     {% from "includes/formhelpers.html" import render_field %}
+    <br>
+    <H3><i><b>ADD-ARTICLE</b></i></H3>
+    <hr>
+
+
+    <form method="post">
+        {{ render_field(form.tıtle,class="form-control")}}
+        {{ render_field(form.content,class="form-control") }}
+
+        <button type="submit" class="btn btn-success" style="background: #2212e8">SAVE</button>
+
+            <hr>
+        <img src="https://dusunbil.com/wp-content/uploads/2016/09/libraries.jpg" alt="library.jpg" width="1150" sizes="100">
+    </form>
+
+
+
+
+
+{% endblock body %}

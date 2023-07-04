@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> MY-PAGE </title>
+</head>
+<body>
+    {% extends "layout.html" %}
+
+    {% block body %}
+        <div class="jumbotron  text-center  " >
+            <h3><i><b> WELCOME TO PYTHON</b></i> </h3>
+            <p>  <b>Python is a user-friendly programming language that is preferred by a wide user base. It can be quickly learned and used thanks to its simple and understandable syntax.
+
+Python stands out as a versatile language that allows application development in various fields. It is widely used in web development, data analysis, artificial intelligence, machine learning, game development, and automation.
+
+One of the biggest advantages of Python is its extensive library and module support. These libraries provide ready-made solutions that simplify complex tasks and speed up development. For example, popular web frameworks like Django and Flask can be used to develop fast and reliable web applications.
+
+Python also has a large community, which provides a pool of resources to help you solve problems. Online forums, documentation, tutorials, and books are just a few of the resources that support learning and development in Python.
+
+In conclusion, Python is a programming language that is preferred in web development and many other fields due to its user-friendly nature, extensive library support, and widespread use. If you want to develop projects quickly, efficiently, and flexibly, Python can be an ideal choice for you..</b>  </p>
+            <br>
+            <img src="https://www.obenseven.com.tr/wp-content/uploads/2020/11/python-syntax-min.jpg" alt="PYTHON.JPG" >
+        </div>
+    
+    <ul>
+
+        {% for i in number %}
+           <li> <b> <i>Number ID:{{ i.ıd }} , Number TİTLE :{{ i.title }} , Number CONTENT:{{ i.content }}</i></b> </li>
+
+            <br>
+        {% endfor %}
+
+
+
+
+
+
+
+    </ul>
+
+    {% endblock %}
+
+
+
+    {% block titles %}
+        
+    {% endblock %}
+
+
+
+
+</body>
+</html>

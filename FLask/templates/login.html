@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+ {% block başlık %}
+     LOGIN
+
+ {% endblock %}
+
+
+ {% block body %}
+        <br>
+        <h3><i><b>LOGIN</b></i></h3>
+        <hr>
+        {% from "includes/formhelpers.html" import render_field %}
+
+         <form method="post">
+         {{ render_field(form.userName)}}
+        {{ render_field(form.password) }}
+
+        <button type="submit" class="btn btn-danger" style="background: #2212e8">Logın</button>
+            <hr>
+        </form>
+
+        <div align="center" >
+
+            <img src="https://sakbis.com.tr/abone/img/010-padlock.svg" alt="login.jpg">
+
+
+        </div>
+
+
+ {% endblock %}
